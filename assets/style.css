@@ -1,11 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-#slider {
-  height: 100vh;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -13,4 +12,80 @@
   width: 50%;
   margin: 0 auto;
   text-align: center;
+}
+
+#header {
+  height: 50px;
+  background: #000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-bar li {
+  line-height: 50px;
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-bar > li,
+li a {
+  text-align: center;
+  display: inline-block;
+  width: 120px;
+  color: #fff;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.parent {
+  position: relative;
+}
+
+.parent > i {
+  font-size: 16px;
+}
+
+.parent:hover > .sub-menu {
+  display: block;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+}
+
+.nav-bar li:hover {
+  background: #52575d;
+}
+
+li.right:hover {
+  background: #2b3467;
+}
+
+#slider {
+  height: 100vh;
+}
+
+.sub-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 50px;
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.sub-menu li {
+  text-align: left;
+  list-style: none;
+  height: 50px;
+  padding: 0 20px;
+  font-size: 18px;
 }
