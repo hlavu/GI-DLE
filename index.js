@@ -5,6 +5,11 @@ const menuBtn = document.querySelector(".menu-btn");
 const slider = document.querySelector("#slider img");
 const sliderCaption = document.querySelector("#slider .figure");
 
+const buyBtnList = document.querySelectorAll(".buy-btn.btn");
+const modal = document.querySelector(".ticket-modal");
+const xBtn = document.querySelector(".x-btn");
+const closeBtn = document.querySelector(".close-btn");
+
 const slidePhotos = [
   {
     imgSrc: "./assets/img/thumb.jpg",
@@ -58,3 +63,21 @@ setInterval(() => {
   slideShow(idx);
   idx++;
 }, 4000);
+
+buyBtnList.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    modal.classList.toggle("show", true);
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.toggle("show", false);
+});
+
+xBtn.addEventListener("click", () => closeBtn.click());
+
+modal.addEventListener("click", function (e) {
+  if (e.target === this) {
+    closeBtn.click();
+  }
+});
